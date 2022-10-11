@@ -14,17 +14,17 @@ function generatePassword() {
   // prompts that confirm how many and what kinds of characters will be included in the final password
 sizeofpassword = prompt("How many characters would you like in your password? Choose between 8-128.")
 if (sizeofpassword < 8 || sizeofpassword > 128) {
-  return "Choose a valid number of characters.";
+  return "Please choose a valid number of characters.";
 } else {
-  alert ("Your password will be " + sizeofpassword + " characters long.")
+  alert ("Your password will be " + sizeofpassword + " characters long.");
 }
 
 IncludeNumbers = confirm ("Do you want numbers in your password?");
 if (!IncludeNumbers){
-  alert("Your password will not include numbers.")
+  alert("Your password will NOT include numbers.");
 } 
 else {
-  alert ("Your password will include numbers.")
+  alert ("Your password will include numbers.");
 }
 
 IncludeLowercase = confirm("Do you want lowercase letters in your password?");
@@ -37,23 +37,23 @@ else {
 
 IncludeUppercase = confirm ("Do you want uppercase letters in your password?")
 if (!IncludeUppercase){
-  alert ("Your password will NOT include uppercase letters!")
+  alert ("Your password will NOT include uppercase letters.");
 } 
 else {
-  alert ("Your password will include uppercase letters!")
+  alert ("Your password will include uppercase letters.");
 }
 
 IncludeSymbols = confirm ("Do you want symbols in your password?")
 if (!IncludeSymbols) {
-  alert ("Your password will NOT contain symbols!")
+  alert ("Your password will NOT contain symbols.");
 } 
 else {
-  alert ("Your password will contain symbols!")
+  alert ("Your password will contain symbols.");
 }
 // this message will be returned if the user doesn't pick atleast one valid character type
 if (IncludeNumbers == false && IncludeLowercase == false && IncludeUppercase == false && IncludeSymbols == false ){
-  alert ("Please pick atleast valid one character type.")
-};
+  alert ("Please pick atleast valid one character type.");
+}
 
 //.concat() groups all of the selected character types into the possibleCharacters array
 if (IncludeNumbers){
@@ -68,7 +68,7 @@ if (IncludeUppercase){
 if (IncludeSymbols){
   possibleCharacters = possibleCharacters.concat(symbols);
 }
-
+// variable finalPassword = possibleCharacters[Total]
 let finalPassword = ""
 for (let i = 0; i < sizeofpassword; i++) {
   let total =[Math.floor(Math.random() * possibleCharacters.length)];
